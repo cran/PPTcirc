@@ -83,7 +83,7 @@ dsimpostppt <- function(datafile, units = c("radians", "degrees", "hours"), mm=4
   }
 
   #---------------------------------------------
-  jm <- 2^mm;km <- 2^mm;n<-length(datafile)
+  jm <- 2^mm; km <- 2^mm; n<-length(datafile)
   rh <- NULL; q <- NULL
   aux <- c(NA,NA, NA, NA)
   xh <- matrix(rep(NA, 2*n), ncol = 2, byrow = TRUE)
@@ -108,7 +108,7 @@ dsimpostppt <- function(datafile, units = c("radians", "degrees", "hours"), mm=4
   t<-seq(0,2*pi,length.out=ll)
 
   dr <- (sqrt(mu[1]^2+ mu[2]^2)+4)/ll
-  r<-seq(dr, sqrt(mu[1]^2+ mu[2]^2)+4,length.out=ll)
+  r<-seq(0, sqrt(mu[1]^2+ mu[2]^2)+4,length.out=ll)
 
   #Definition of alpha parameters
   a <-  matrix(data = NA, nrow = mm, ncol = 4, byrow = FALSE, dimnames = NULL)
@@ -146,8 +146,8 @@ dsimpostppt <- function(datafile, units = c("radians", "degrees", "hours"), mm=4
 
   #Defining returns
   ss <- 1
-  sim_aa <- vector("numeric", it)
-  sim_mu <- matrix(data = NA, nrow = it, ncol = 2, byrow = FALSE, dimnames = NULL)
+  sim_aa <- vector("numeric", ceiling((it-bi)/ti))
+  sim_mu <- matrix(data = NA, nrow = ceiling((it-bi)/ti), ncol = 2, byrow = FALSE, dimnames = NULL)
 
 
   for(s in 1:it){
@@ -188,7 +188,9 @@ dsimpostppt <- function(datafile, units = c("radians", "degrees", "hours"), mm=4
     }
 
     #Simulating from mu
-    mu <- pt.simmu(n,taum,mu0,rh, th)
+    if(hm==1){
+      mu <- pt.simmu(n,taum,mu0,rh, th)
+    }
 
     #Re-defining partitions
     if(hm==1){
@@ -215,16 +217,16 @@ dsimpostppt <- function(datafile, units = c("radians", "degrees", "hours"), mm=4
     if(s %in% vsim){
 
       FT[ss,] <- ft
+      if(ha==1){
+        sim_aa[ss] <- aa
+      }
+      if(hm==1){
+        sim_mu[ss,] <- mu
+      }
       ss <- ss+1
 
     }
 
-    if(ha==1){
-      sim_aa[s] <- aa
-    }
-    if(hm==1){
-      sim_mu[s,] <- mu
-    }
 
 
     #Mean direction and concentration
@@ -291,27 +293,27 @@ dsimpostppt <- function(datafile, units = c("radians", "degrees", "hours"), mm=4
 
   stats <- data.frame(mean.direction = mt.cc, concentration = vt.cc)
 
- #--------------------------------------------
+  #--------------------------------------------
 
   if(ha==1 & hm==1){
     return(structure(list(x = t.cc, predictive = predictive, quantile2.5 = quantile2.5,
-                quantile97.5 = quantile97.5, stats = stats,
-                cpo = cpo, LMPL = lmpl,
-                aa.sims = sim_aa, mu.sims = sim_mu, acceptancerate= acceptrate1,
-                acceptancerate_aa = acceptrate2, data = datafile),class = "postppt.circ"))
+                          quantile97.5 = quantile97.5, stats = stats,
+                          cpo = cpo, LMPL = lmpl,
+                          aa.sims = sim_aa, mu.sims = sim_mu, acceptancerate= acceptrate1,
+                          acceptancerate_aa = acceptrate2, data = datafile),class = "postppt.circ"))
   }else if(ha ==1 & hm==0){
     return(structure(list(x = t.cc, predictive = predictive, quantile2.5 = quantile2.5,
-                quantile97.5 = quantile97.5, stats = stats,
-                cpo = cpo, LMPL = lmpl,  aa.sims = sim_aa, acceptancerate= acceptrate1,
-                acceptancerate_aa = acceptrate2, data = datafile), class = "postppt.circ"))
+                          quantile97.5 = quantile97.5, stats = stats,
+                          cpo = cpo, LMPL = lmpl,  aa.sims = sim_aa, acceptancerate= acceptrate1,
+                          acceptancerate_aa = acceptrate2, data = datafile), class = "postppt.circ"))
   }else if(ha == 0 & hm == 1){
     return(structure(list(x = t.cc, predictive = predictive, quantile2.5 = quantile2.5,
-                quantile97.5 = quantile97.5, stats = stats,
-                cpo = cpo, LMPL = lmpl, mu.sims = sim_mu,
-                acceptancerate= acceptrate1, data = datafile), class = "postppt.circ"))
+                          quantile97.5 = quantile97.5, stats = stats,
+                          cpo = cpo, LMPL = lmpl, mu.sims = sim_mu,
+                          acceptancerate= acceptrate1, data = datafile), class = "postppt.circ"))
   }else{
     return(structure(list(x = t.cc, predictive = predictive, quantile2.5 = quantile2.5,
-                quantile97.5 = quantile97.5, stats = stats,
-                cpo = cpo, LMPL = lmpl, acceptancerate= acceptrate1, data= datafile), class = "postppt.circ"))
+                          quantile97.5 = quantile97.5, stats = stats,
+                          cpo = cpo, LMPL = lmpl, acceptancerate= acceptrate1, data= datafile), class = "postppt.circ"))
   }
 }

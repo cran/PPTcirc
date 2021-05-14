@@ -1,11 +1,12 @@
-e817897fd2fcef778b263fce349de2e0 *DESCRIPTION
+4b787901576cb0b5695111ef9ae4ee79 *DESCRIPTION
 bba002836b45458ded1081e680829532 *NAMESPACE
+b126251af33d915060ae0a4d68148877 *NEWS.md
 afa32a051c61641c8bf18d20f96accc1 *R/auxfunctions.ppt.R
 7eaceaf8475bcc82911c2b8273389361 *R/deer.R
-f90ac1b32927376e980ff87b2a5aceeb *R/dsimpostppt.R
+2e9154c528d50d61781c803d5837d573 *R/dsimpostppt.R
 aeeb21fb8fe3af26f6f14c7613a2b721 *R/dsimpriorppt.R
 0038cee923938fcb536e749c5dd362b6 *R/peccary.R
-e2f37e4a8cf81b9a66f8c3d98c039ebf *R/postppt.plot.R
+1c99ac582afb55e726dcc1587ad172ed *R/postppt.plot.R
 5e4443adcb0960cfadd37c12aa47666f *R/postppt.summary.R
 a5d8095f82396fb1207e213a772420b2 *R/pptprior.plot.R
 18f8dc77e098354b6a6b7513aec441ce *R/priorppt.summary.R
@@ -17,7 +18,7 @@ d19fb6a59382f527f99464c026ea7866 *man/deer.Rd
 9c197fb01d5a52086a781be4313b3216 *man/dsimpostppt.Rd
 97833324cc6883ae30a7a29f14ea522f *man/dsimpriorppt.Rd
 5b2781480922d3a15f47805f70d8fe82 *man/peccary.Rd
-01282d86dabda48fa53ce2046162e7f4 *man/postppt.plot.Rd
+e90947b44249799227b66fdd4a360709 *man/postppt.plot.Rd
 2b643fc4b33fcbf55b3600efc8a99bda *man/postppt.summary.Rd
 6a1c03ffc341874b9b0e378afc450b17 *man/priorppt.plot.Rd
 cadf9bea746e738bc96b47eaa9dcd077 *man/priorppt.summary.Rd

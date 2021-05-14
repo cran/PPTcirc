@@ -7,7 +7,7 @@
 postppt.plot(postppt.circ,
 plot.type = c("circle", "line", "summary", "a.sim", "mu.sim", "cpos"),
 interval = TRUE, control.circular = list(),
-shrink = 1, tol = 0.04, ylim = NULL)
+shrink = 1, tol = 0.04,sep = 0.025, ylim = NULL, xlim = NULL, breaks = 12)
 }
 \arguments{
 \item{postppt.circ}{object returned by the \code{dsimpostppt} function.}
@@ -16,7 +16,7 @@ shrink = 1, tol = 0.04, ylim = NULL)
 "circle" for circular plot,
 "line" for linear plot,
 "summary" for boxplot of mean direction and concentration,
-"cpos" for cpos scatter plot
+"cpos" for cpos scatter plot,
 "a.sim" for summary plots of simulated alphas and
 "mu.sim" for summary plots of simulated mu1 and mu2.}
 
@@ -28,7 +28,17 @@ shrink = 1, tol = 0.04, ylim = NULL)
 
 \item{tol}{proportion of white space at the margins of plot.}
 
+\item{sep}{constant used to specify the distance between stacked points. Default is 0.025;smaller values will create smaller spaces}
+
 \item{ylim}{range to be encompassed by "y" axis.}
+
+\item{xlim}{range to be encompassed by "x" axis.}
+
+\item{breaks}{one of: a vector giving the breakpoints between histogram cells,
+a function to compute the vector of breakpoints,
+a single number giving the number of cells for the histogram,
+a character string naming an algorithm to compute the number of cells,
+a function to compute the number of cells.}
 }
 \description{
 Plots posterior projected Polya tree estimates.
