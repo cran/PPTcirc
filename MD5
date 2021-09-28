@@ -1,6 +1,6 @@
-4b787901576cb0b5695111ef9ae4ee79 *DESCRIPTION
+32a2d48da4b62ae7864adada8b7b06f5 *DESCRIPTION
 bba002836b45458ded1081e680829532 *NAMESPACE
-b126251af33d915060ae0a4d68148877 *NEWS.md
+efd5f511884e8c76059c5be3ac860d2e *NEWS.md
 afa32a051c61641c8bf18d20f96accc1 *R/auxfunctions.ppt.R
 7eaceaf8475bcc82911c2b8273389361 *R/deer.R
 2e9154c528d50d61781c803d5837d573 *R/dsimpostppt.R
@@ -11,9 +11,13 @@ aeeb21fb8fe3af26f6f14c7613a2b721 *R/dsimpriorppt.R
 a5d8095f82396fb1207e213a772420b2 *R/pptprior.plot.R
 18f8dc77e098354b6a6b7513aec441ce *R/priorppt.summary.R
 5884bb9cc39f847586c40044c1e75f10 *R/tapir.R
+a94c46522401456d6423553f27be8e10 *build/vignette.rds
 953f97c3b34e8f990b199810d4599a96 *data/deer.rda
 77a5b813dd277a7108356769fc85efa1 *data/peccary.rda
 272989a70e4285c50949aa80890afcea *data/tapir.rda
+af75f4ea5232f896b2c3173c7074ea9b *inst/doc/my-vignette.R
+4ce2e51eaa693b8c9ac659d97b6149ff *inst/doc/my-vignette.Rmd
+d34ec81cdee139e64368f46ca80f9c61 *inst/doc/my-vignette.html
 d19fb6a59382f527f99464c026ea7866 *man/deer.Rd
 9c197fb01d5a52086a781be4313b3216 *man/dsimpostppt.Rd
 97833324cc6883ae30a7a29f14ea522f *man/dsimpriorppt.Rd
@@ -23,3 +27,4 @@ e90947b44249799227b66fdd4a360709 *man/postppt.plot.Rd
 6a1c03ffc341874b9b0e378afc450b17 *man/priorppt.plot.Rd
 cadf9bea746e738bc96b47eaa9dcd077 *man/priorppt.summary.Rd
 9af48cd7074c98d0eb8b922b8d39bd2e *man/tapir.Rd
+4ce2e51eaa693b8c9ac659d97b6149ff *vignettes/my-vignette.Rmd
