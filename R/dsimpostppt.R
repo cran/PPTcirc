@@ -1,6 +1,4 @@
 #' @title Posterior projected Polya Tree distribution
-#'
-#'
 #' @importFrom graphics boxplot hist lines matplot par
 #' @importFrom stats acf dgamma dnorm qnorm quantile rgamma rnorm runif
 #' @importFrom progress progress_bar

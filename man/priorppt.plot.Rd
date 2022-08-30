@@ -11,7 +11,7 @@ shrink=1, tol = 0.04,ylim)
 \arguments{
 \item{priorppt.circ}{object returned by \code{dsimpriorppt} function.}
 
-\item{n.path}{"all" plots all the simulated paths or numeric atomic vector indicates the simulation path of the priorppt.circ object that will be plot.}
+\item{n.path}{"all" plots all the simulated paths or numeric parameter indicates the simulation path of the priorppt.circ object that will be plot.}
 
 \item{plot.type}{type of plot to be drawn:
 "circle" for circular plot,
@@ -35,9 +35,9 @@ Plots density paths of simulated prior projected Polya tree, mean direction and 
 }
 \examples{
 z <- dsimpriorppt(mu = c(0,1), nsim = 5, units = "degrees")
-priorppt.plot(z, plot.type = "circle",shrink =0.0071, tol = 3.9)
-priorppt.plot(z, plot.type = "line",shrink =0.0071, tol = 3.9)
-priorppt.plot(z, plot.type = "summary",shrink =0.0071, tol = 3.9)
+priorppt.plot(z, plot.type = "circle",shrink =0.5, tol = 4)
+priorppt.plot(z, plot.type = "line")
+priorppt.plot(z, plot.type = "summary")
 
 }
 \seealso{

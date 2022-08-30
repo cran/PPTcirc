@@ -30,6 +30,8 @@
 #' a character string naming an algorithm to compute the number of cells,
 #' a function to compute the number of cells.
 #'
+#' @importFrom methods is
+#'
 #' @examples \donttest{ z2 <- dsimpostppt(deer, units = "radians", it = 10, ti =1, bi=0, ha = 1)
 #' postppt.plot(z2, plot.type= "line" , shrink = 1.4, tol = 1.2, ylim = c(0,0.6))
 #' postppt.summary(z2)
@@ -45,7 +47,7 @@ postppt.plot <- function(postppt.circ, plot.type=c("circle", "line", "summary", 
                          tol = 0.04, sep = 0.025, ylim=NULL, xlim= NULL,
                          breaks = 12){
 
-  if (class(postppt.circ)!="postppt.circ")
+  if (!is(postppt.circ,"postppt.circ"))
     stop("object must be class postppt.circ")
 
   datacircularp <- list(type="angles", units="radians", template="none", modulo="asis", zero=0, rotation="counter")

@@ -2,6 +2,7 @@
 #'
 #' @description Extracts mean, quantiles 2.5\% and 97.5\% of the mean direction and concentration.
 #' @param postppt.circ object returned by \code{dsimpostppt} function.
+#' @importFrom methods is
 #' @examples z1 <- dsimpostppt(tapir, units = "radians", it = 5, ti =1, bi=0)
 #' postppt.summary(z1)
 #' @return table of descriptive statistics.
@@ -9,7 +10,7 @@
 #'
 postppt.summary <- function(postppt.circ){
 
-  if (class(postppt.circ)!="postppt.circ")
+  if (!is(postppt.circ,"postppt.circ"))
     stop("object must be class postppt.circ")
 
   t <- postppt.circ$x
